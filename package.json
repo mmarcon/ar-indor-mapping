@@ -4,7 +4,8 @@
   "description": "AR Drone + Node.js for indoor mapping.",
   "main": "app.js",
   "dependencies": {
-    "ar-drone": "~0.0.2"
+    "ar-drone": "~0.0.2",
+    "node-static": "0.6.2"
   },
   "devDependencies": {},
   "scripts": {
