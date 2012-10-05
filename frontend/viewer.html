@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>vr test</title>
+
+	<style type="text/css" media="screen">
+		* 			{ outline : none; -moz-outline : none -moz-mac-focusring; }
+		#bd {position: relative; width:1024px; margin:0 auto;height:354px;overflow:hidden;}
+		#hd h1 			{ font-size: 300%; font-weight: bold; color: #000; }
+		#source-img		{ position: absolute; left: -999em; }
+		canvas			{ position: absolute; top: 0px; border: 1px solid #999; margin-top:-120px;}
+		#doc			{ width: 1200px; }
+
+		#range-slider		{ position: relative; display: none; }
+		#range-bkgd		{ position: absolute; top: 12px; left: 8px; width: 200px; height: 3px; overflow: hidden; border: 1px solid #aaa; background: #eee; }
+		#range-scale		{ position: absolute; top: 0; left: 8px; width: 100px; height: 3px; overflow: hidden; border-right: 1px solid #666; background: #f4f4f4; }
+		#width-outout,
+		#scaling-output		{ display: none; }
+
+		#scaling-slider		{ position: relative; display: none; }
+		#scaling-bkgd		{ position: absolute; top: 12px; left: 8px; width: 200px; height: 3px; overflow: hidden; border: 1px solid #aaa; background: #eee; }
+		#scaling-scale		{ position: absolute; top: 0; left: 8px; width: 100px; height: 3px; overflow: hidden; border-right: 1px solid #666; background: #f4f4f4; }
+
+		#screen			{ position: absolute; top: 0px; width:1024px;margin-top:-120px;}
+		#screen div 		{ float: none; width: 200px; height: 200px; background: #fff; opacity: 1; }
+
+		div#screen-top		{ width: 1202px; height: 111px; clear: right; }
+		div#screen-bottom	{ width: 1202px; height: 121px; }
+
+		div#screen-stage	{ height: 354px; width: 1024px; background: transparent; border: 1px solid #000; }
+		div#screen-overlay	{ position: absolute; top: 40px; left: 0px; margin-left: 0px; height: 504px; width: 602px; }
+
+	</style>
+
+	<!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+
+
+</head>
+<body>
+
+	<div id="bd">
+		<canvas id="cv"></canvas>
+
+		<img src="mars.jpg" id="source-img" />
+
+		<div id="screen">
+			<div id="screen-top"></div>
+			<div id="screen-stage"></div>
+			<div id="screen-bottom"></div>
+		</div>
+
+		<div id="screen-overlay"></div>
+	</div>
+	<div id="ft"></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="pano.js"></script>
+</body>
+</html>
