@@ -54,11 +54,11 @@ arDroneClient.prototype.capture = function(){
     var drone = this;
     if(capture) {
         this.clockwise(0.4);
-        this.after(500, function(){
+        this.after(200, function(){
             this.stop();
-        }).after(300, function(){
+        }).after(100, function(){
             drone.takePhoto();
-        }).after(300, function(){
+        }).after(100, function(){
             this.capture();
         });
     }
@@ -74,7 +74,7 @@ function shouldStorePhotos(){
 
 client.createRepl();
 
-// client.on('navdata', console.log);
+//client.on('navdata', console.log);
 
 pngStream = client.createPngStream();
 pngStream.on('data', function(PNGData){
@@ -86,7 +86,7 @@ pngStream.on('data', function(PNGData){
     if (!PNGData || PNGData.length <= 0) {
         console.log('No PNG data');
     }
-    if(takePhoto && counter < 8 && PNGData && PNGData.length > 0) {
+    if(takePhoto && counter < 20 && PNGData && PNGData.length > 0) {
         console.log('saving PNG data');
         fs.writeFile(AERIAL_PHOTOS + '/' + counter + '-photo.png', PNGData, function(e){
             console.log(e);
