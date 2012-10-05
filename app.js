@@ -60,11 +60,13 @@ client.createRepl();
 
 pngStream = client.createPngStream();
 pngStream.on('data', function(PNGData){
-    if(shouldStorePhotos()) {
+    if(shouldStorePhotos() && PNGData && PNGData.length > 0) {
         fs.writeFile(AERIAL_PHOTOS + '/' + Date.now() + '-pic.png', PNGData);
     }
 });
 
 pngStream.on('error', function(error){
     console.log(error);
+    pngStream._tcpVideoStream.end();
+    process.exit(1);
 });
