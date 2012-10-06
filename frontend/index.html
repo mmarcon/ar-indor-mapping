@@ -3,23 +3,23 @@
 <head>
 	<title>vr test</title>
 	<style type="text/css" media="screen">
-		#bd {position: relative; width:1024px; margin:0 auto;overflow:hidden;}
-		#source-img		{ display: none;}
-		#interaction	{ position: absolute; top: 0; left: 0px; margin-left: 0px; height: 346px; width: 1022px; }
-
+	body {
+		padding:0;margin:0;
+		background:black;
+	}
+	body>div {
+		margin:0 auto;
+	}
 	</style>
-
-	<!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-
-
 </head>
 <body>
-	<div id="bd">
-		<canvas id="cv"></canvas>
-		<img src="panorama.jpg" id="source-img" data-width="1024">
-		<div id="interaction"></div>
-	</div>
+	<img src="panorama.jpg" id="source-img">
 	<script src="jquery.min.js"></script>
-	<script src="sphericalProjection.js"></script>
+	<script src="sphericalProjection.jquery.js"></script>
+	<script>
+	$('#source-img').on('load', function() {
+		$(this).sphericalProjection();
+	});
+	</script>
 </body>
 </html>
